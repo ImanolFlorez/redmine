@@ -10,32 +10,21 @@
 
 /* Logo en el header usando background-image */
 #header > h1 {
-  position: relative !important;
-  padding-left: 230px !important;
-  min-height: 60px !important;
-  background-image: url("/images/logo.png") !important;
-  background-size: 200px auto !important;
-  background-repeat: no-repeat !important;
-  background-position: 15px center !important;
+    content: "" !important;
+    display: block !important;
+    position: relative !important;
+    left: 15px !important;
+    top: 10% !important;
+    width: 200px !important;
+    height: 60px !important;
+    background-image: url("/images/logo.png") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: left center !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
 }
 
-/* Logo alternativo usando pseudo-elemento si h1 no funciona */
-#header::before {
-  content: "" !important;
-  display: block !important;
-  position: absolute !important;
-  left: 15px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  width: 200px !important;
-  height: 60px !important;
-  background-image: url("/images/logo.png") !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: left center !important;
-  z-index: 10 !important;
-  pointer-events: none !important;
-}
 
 /* ============================================
    LOGO IN LOGIN FORM - Solo en el formulario de login
