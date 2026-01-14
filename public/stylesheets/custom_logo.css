@@ -105,8 +105,8 @@
    ============================================ */
 .ezertech-welcome-card {
   max-width: 800px !important;
-  margin: 60px auto !important;
-  padding: 50px 40px !important;
+  margin: 30px auto !important;
+  padding: 30px 35px !important;
   background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
   border-radius: 20px !important;
   box-shadow: 0 10px 40px rgba(52, 84, 116, 0.15),
@@ -133,15 +133,15 @@
 
 /* Icono de bienvenida */
 .ezertech-welcome-icon {
-  width: 100px !important;
-  height: 100px !important;
-  margin: 0 auto 30px !important;
+  width: 70px !important;
+  height: 70px !important;
+  margin: 0 auto 18px !important;
   background: linear-gradient(135deg, #648cb4 0%, #345474 100%) !important;
   border-radius: 50% !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  font-size: 45px !important;
+  font-size: 32px !important;
   color: #ffffff !important;
   box-shadow: 0 8px 24px rgba(100, 140, 180, 0.3) !important;
   animation: pulse-icon 2s ease-in-out infinite !important;
@@ -160,10 +160,10 @@
 
 /* Título de bienvenida */
 .ezertech-welcome-title {
-  font-size: 2.5em !important;
+  font-size: 2em !important;
   font-weight: 700 !important;
   color: #1e293b !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 10px !important;
   background: linear-gradient(135deg, #648cb4 0%, #345474 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -172,32 +172,32 @@
 
 /* Subtítulo */
 .ezertech-welcome-subtitle {
-  font-size: 1.2em !important;
+  font-size: 1em !important;
   color: #64748b !important;
   font-weight: 500 !important;
-  margin-bottom: 30px !important;
+  margin-bottom: 18px !important;
 }
 
 /* Contenido de bienvenida */
 .ezertech-welcome-content {
-  margin: 30px 0 !important;
+  margin: 18px 0 !important;
   text-align: left !important;
 }
 
 .ezertech-welcome-content p {
-  font-size: 1.05em !important;
+  font-size: 0.95em !important;
   color: #475569 !important;
-  line-height: 1.8 !important;
-  margin-bottom: 20px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 12px !important;
 }
 
 /* Características destacadas */
 .ezertech-welcome-features {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
-  gap: 20px !important;
-  margin-top: 40px !important;
-  padding-top: 40px !important;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+  gap: 15px !important;
+  margin-top: 25px !important;
+  padding-top: 25px !important;
   border-top: 2px solid rgba(100, 140, 180, 0.1) !important;
 }
 
@@ -205,8 +205,8 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  gap: 12px !important;
-  padding: 20px !important;
+  gap: 8px !important;
+  padding: 15px 12px !important;
   background: rgba(100, 140, 180, 0.05) !important;
   border-radius: 12px !important;
   transition: all 0.3s ease !important;
@@ -218,12 +218,12 @@
 }
 
 .ezertech-welcome-features .ezertech-feature-item i {
-  font-size: 32px !important;
+  font-size: 26px !important;
   color: #648cb4 !important;
 }
 
 .ezertech-welcome-features .ezertech-feature-item span {
-  font-size: 0.95em !important;
+  font-size: 0.85em !important;
   color: #475569 !important;
   font-weight: 500 !important;
   text-align: center !important;
@@ -309,12 +309,14 @@ body.controller-admin.action-index #content {
 
 /* Flecha al final de cada opción */
 #admin-menu a::after {
-  content: "→" !important;
-  font-size: 18px !important;
+  content: "➜" !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
   color: rgba(100, 140, 180, 0.5) !important;
   transition: all 0.3s ease !important;
   margin-left: auto !important;
   opacity: 0.6 !important;
+  line-height: 1 !important;
 }
 
 #admin-menu a:hover {
