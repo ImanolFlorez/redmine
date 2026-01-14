@@ -4,20 +4,21 @@
    LOGO IN HEADER - Barra azul superior
    ============================================ */
 #header {
-  position: relative !important;
+  position: static !important;
   min-height: 60px !important;
 }
 
 /* Logo en el header usando background-image */
 #header > h1 {
-    position: relative !important;
+    /*position: relative !important;*/
     padding-left: 130px !important;
     min-height: 50px !important;
     background-image: url("/images/logo.png") !important;
     background-size: 100px auto !important;
     background-repeat: no-repeat !important;
     background-position: 15px center !important;
-    display: flex !important;
+    justify-content: center !important;
+   /* display: flex !important;*/
     align-items: center !important;
 }
 
