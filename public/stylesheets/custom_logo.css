@@ -101,6 +101,292 @@
 }
 
 /* ============================================
+   TARJETA DE BIENVENIDA CENTRADA - PÁGINA DE INICIO
+   ============================================ */
+.ezertech-welcome-card {
+  max-width: 800px !important;
+  margin: 60px auto !important;
+  padding: 50px 40px !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 40px rgba(52, 84, 116, 0.15),
+              0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(100, 140, 180, 0.1) !important;
+}
+
+/* Efecto de brillo sutil en la parte superior de la tarjeta */
+.ezertech-welcome-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, 
+    #648cb4, 
+    #345474, 
+    #648cb4) !important;
+}
+
+/* Icono de bienvenida */
+.ezertech-welcome-icon {
+  width: 100px !important;
+  height: 100px !important;
+  margin: 0 auto 30px !important;
+  background: linear-gradient(135deg, #648cb4 0%, #345474 100%) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 45px !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(100, 140, 180, 0.3) !important;
+  animation: pulse-icon 2s ease-in-out infinite !important;
+}
+
+@keyframes pulse-icon {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 8px 24px rgba(100, 140, 180, 0.3) !important;
+  }
+  50% { 
+    transform: scale(1.05); 
+    box-shadow: 0 12px 32px rgba(100, 140, 180, 0.4) !important;
+  }
+}
+
+/* Título de bienvenida */
+.ezertech-welcome-title {
+  font-size: 2.5em !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin-bottom: 15px !important;
+  background: linear-gradient(135deg, #648cb4 0%, #345474 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Subtítulo */
+.ezertech-welcome-subtitle {
+  font-size: 1.2em !important;
+  color: #64748b !important;
+  font-weight: 500 !important;
+  margin-bottom: 30px !important;
+}
+
+/* Contenido de bienvenida */
+.ezertech-welcome-content {
+  margin: 30px 0 !important;
+  text-align: left !important;
+}
+
+.ezertech-welcome-content p {
+  font-size: 1.05em !important;
+  color: #475569 !important;
+  line-height: 1.8 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Características destacadas */
+.ezertech-welcome-features {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 20px !important;
+  margin-top: 40px !important;
+  padding-top: 40px !important;
+  border-top: 2px solid rgba(100, 140, 180, 0.1) !important;
+}
+
+.ezertech-welcome-features .ezertech-feature-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 20px !important;
+  background: rgba(100, 140, 180, 0.05) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.ezertech-welcome-features .ezertech-feature-item:hover {
+  background: rgba(100, 140, 180, 0.1) !important;
+  transform: translateY(-3px) !important;
+}
+
+.ezertech-welcome-features .ezertech-feature-item i {
+  font-size: 32px !important;
+  color: #648cb4 !important;
+}
+
+.ezertech-welcome-features .ezertech-feature-item span {
+  font-size: 0.95em !important;
+  color: #475569 !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+}
+
+/* Responsive para tarjeta de bienvenida */
+@media (max-width: 768px) {
+  .ezertech-welcome-card {
+    margin: 40px 20px !important;
+    padding: 40px 30px !important;
+    border-radius: 16px !important;
+  }
+  
+  .ezertech-welcome-icon {
+    width: 80px !important;
+    height: 80px !important;
+    font-size: 35px !important;
+  }
+  
+  .ezertech-welcome-title {
+    font-size: 2em !important;
+  }
+  
+  .ezertech-welcome-subtitle {
+    font-size: 1.1em !important;
+  }
+  
+  .ezertech-welcome-features {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+}
+
+/* ============================================
+   MEJORAS VISUALES PARA PÁGINA DE ADMINISTRACIÓN
+   ============================================ */
+body.controller-admin #content,
+body.controller-admin.action-index #content {
+  padding: 30px 20px !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+}
+
+/* Mejora del menú de administración */
+#admin-menu {
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(241, 245, 249, 0.95) 100%) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  box-shadow: 0 4px 16px rgba(52, 84, 116, 0.1) !important;
+  border: 1px solid rgba(100, 140, 180, 0.15) !important;
+  margin-bottom: 30px !important;
+}
+
+#admin-menu ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#admin-menu li {
+  margin-bottom: 8px !important;
+}
+
+#admin-menu a {
+  display: block !important;
+  padding: 12px 16px !important;
+  color: #475569 !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  font-weight: 500 !important;
+  border-left: 3px solid transparent !important;
+}
+
+#admin-menu a:hover {
+  background: rgba(100, 140, 180, 0.1) !important;
+  color: #345474 !important;
+  border-left-color: #648cb4 !important;
+  transform: translateX(5px) !important;
+}
+
+#admin-menu a.selected {
+  background: linear-gradient(90deg, rgba(100, 140, 180, 0.15), transparent) !important;
+  color: #345474 !important;
+  border-left-color: #648cb4 !important;
+  font-weight: 600 !important;
+}
+
+/* Mejora de las tablas en administración */
+body.controller-admin table.list {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(100, 140, 180, 0.1) !important;
+}
+
+body.controller-admin table.list th {
+  background: linear-gradient(135deg, rgba(100, 140, 180, 0.1) 0%, rgba(52, 84, 116, 0.1) 100%) !important;
+  color: #345474 !important;
+  font-weight: 600 !important;
+  padding: 14px 16px !important;
+  border-bottom: 2px solid rgba(100, 140, 180, 0.2) !important;
+}
+
+body.controller-admin table.list td {
+  padding: 12px 16px !important;
+  border-bottom: 1px solid rgba(100, 140, 180, 0.08) !important;
+}
+
+body.controller-admin table.list tr:hover {
+  background: rgba(100, 140, 180, 0.03) !important;
+}
+
+/* Mejora de formularios en administración */
+body.controller-admin fieldset {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 25px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(100, 140, 180, 0.1) !important;
+  margin-bottom: 25px !important;
+}
+
+body.controller-admin fieldset legend {
+  color: #345474 !important;
+  font-weight: 600 !important;
+  font-size: 1.2em !important;
+  padding: 0 15px !important;
+}
+
+/* Mejora de botones en administración */
+body.controller-admin input[type="submit"],
+body.controller-admin button,
+body.controller-admin .button {
+  background: linear-gradient(135deg, #648cb4 0%, #345474 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 10px 20px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(100, 140, 180, 0.3) !important;
+  cursor: pointer !important;
+}
+
+body.controller-admin input[type="submit"]:hover,
+body.controller-admin button:hover,
+body.controller-admin .button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(100, 140, 180, 0.4) !important;
+}
+
+/* Títulos en administración */
+body.controller-admin h2 {
+  color: #345474 !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 2px solid rgba(100, 140, 180, 0.2) !important;
+}
+
+/* ============================================
    LOGO IN LOGIN FORM - Solo en el formulario de login
    ============================================ */
 /* Logo SOLO dentro del formulario de login */

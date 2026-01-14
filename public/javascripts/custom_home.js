@@ -137,8 +137,8 @@
     }
     
     // Verificar si ya se inyectó el contenido
-    if (content.querySelector('.ezertech-logged-in-content')) {
-      console.log('Ezertech: ✅ Vista de usuario logueado ya inyectada');
+    if (content.querySelector('.ezertech-welcome-card')) {
+      console.log('Ezertech: ✅ Tarjeta de bienvenida ya inyectada');
       return true;
     }
     
@@ -153,148 +153,56 @@
       document.head.appendChild(fontAwesomeLink);
     }
     
-    // Crear el contenido personalizado para usuario logueado
-    const customContent = document.createElement('div');
-    customContent.className = 'ezertech-logged-in-content';
+    // Ocultar todo el contenido existente
+    const allChildren = Array.from(content.children);
+    allChildren.forEach(child => {
+      if (!child.classList.contains('ezertech-welcome-card')) {
+        child.style.display = 'none';
+      }
+    });
     
-    // Sección de Proyectos
-    const proyectosSection = document.createElement('div');
-    proyectosSection.className = 'ezertech-section-module';
-    proyectosSection.innerHTML = `
-      <h2 class="ezertech-section-title">
-        <i class="fas fa-project-diagram"></i>
-        Sesión - Proyectos
-      </h2>
-      <div class="ezertech-buttons-grid">
-        <a href="/projects" class="ezertech-module-button">
-          <i class="fas fa-folder-open"></i>
-          <span>Proyectos</span>
-        </a>
-        <a href="/activity" class="ezertech-module-button">
-          <i class="fas fa-chart-line"></i>
-          <span>Actividad</span>
-        </a>
-        <a href="/issues" class="ezertech-module-button">
-          <i class="fas fa-ticket-alt"></i>
-          <span>Peticiones</span>
-        </a>
-        <a href="/time_entries" class="ezertech-module-button">
-          <i class="fas fa-clock"></i>
-          <span>Tiempo Dedicado</span>
-        </a>
-        <a href="/issues/gantt" class="ezertech-module-button">
+    // Crear la tarjeta de bienvenida centrada
+    const welcomeCard = document.createElement('div');
+    welcomeCard.className = 'ezertech-welcome-card';
+    welcomeCard.innerHTML = `
+      <div class="ezertech-welcome-icon">
+        <i class="fas fa-hand-sparkles"></i>
+      </div>
+      <h1 class="ezertech-welcome-title">¡Bienvenido a Ezertech!</h1>
+      <p class="ezertech-welcome-subtitle">Sistema de Gestión de Proyectos y Peticiones</p>
+      <div class="ezertech-welcome-content">
+        <p>Estamos encantados de tenerte aquí. Desde este panel podrás gestionar todos tus proyectos, peticiones y actividades de manera eficiente y organizada.</p>
+        <p>Utiliza el menú de navegación superior para acceder a las diferentes secciones del sistema y comenzar a trabajar.</p>
+      </div>
+      <div class="ezertech-welcome-features">
+        <div class="ezertech-feature-item">
           <i class="fas fa-project-diagram"></i>
-          <span>Gantt</span>
-        </a>
-        <a href="/issues/calendar" class="ezertech-module-button">
-          <i class="fas fa-calendar-alt"></i>
-          <span>Calendario</span>
-        </a>
-        <a href="/news" class="ezertech-module-button">
-          <i class="fas fa-newspaper"></i>
-          <span>Noticias</span>
-        </a>
-      </div>
-    `;
-    
-    // Sección de Administración
-    const adminSection = document.createElement('div');
-    adminSection.className = 'ezertech-section-module';
-    adminSection.innerHTML = `
-      <h2 class="ezertech-section-title">
-        <i class="fas fa-cog"></i>
-        Sesión - Administración
-      </h2>
-      <div class="ezertech-buttons-grid">
-        <a href="/admin/projects" class="ezertech-module-button">
-          <i class="fas fa-folder"></i>
-          <span>Proyectos</span>
-        </a>
-        <a href="/users" class="ezertech-module-button">
+          <span>Gestión de Proyectos</span>
+        </div>
+        <div class="ezertech-feature-item">
+          <i class="fas fa-ticket-alt"></i>
+          <span>Seguimiento de Peticiones</span>
+        </div>
+        <div class="ezertech-feature-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Reportes y Análisis</span>
+        </div>
+        <div class="ezertech-feature-item">
           <i class="fas fa-users"></i>
-          <span>Usuarios</span>
-        </a>
-        <a href="/groups" class="ezertech-module-button">
-          <i class="fas fa-user-friends"></i>
-          <span>Grupos</span>
-        </a>
-        <a href="/roles" class="ezertech-module-button">
-          <i class="fas fa-user-shield"></i>
-          <span>Perfiles y Permisos</span>
-        </a>
-        <a href="/trackers" class="ezertech-module-button">
-          <i class="fas fa-tags"></i>
-          <span>Tipos de Peticiones</span>
-        </a>
-        <a href="/issue_statuses" class="ezertech-module-button">
-          <i class="fas fa-info-circle"></i>
-          <span>Estados de la Peticiones</span>
-        </a>
-        <a href="/workflows/edit" class="ezertech-module-button">
-          <i class="fas fa-sitemap"></i>
-          <span>Flujo de Trabajo</span>
-        </a>
-        <a href="/custom_fields" class="ezertech-module-button">
-          <i class="fas fa-edit"></i>
-          <span>Campos Personalizados</span>
-        </a>
-        <a href="/enumerations" class="ezertech-module-button">
-          <i class="fas fa-list"></i>
-          <span>Lista de Valores</span>
-        </a>
-        <a href="/settings" class="ezertech-module-button">
-          <i class="fas fa-sliders-h"></i>
-          <span>Configuración</span>
-        </a>
-        <a href="/auth_sources" class="ezertech-module-button">
-          <i class="fas fa-key"></i>
-          <span>Autenticación LDAP</span>
-        </a>
-        <a href="/admin/plugins" class="ezertech-module-button">
-          <i class="fas fa-plug"></i>
-          <span>Extensiones</span>
-        </a>
-        <a href="/admin/info" class="ezertech-module-button">
-          <i class="fas fa-info"></i>
-          <span>Información</span>
-        </a>
+          <span>Colaboración en Equipo</span>
+        </div>
       </div>
     `;
     
-    // Agregar todo al contenedor (sin el hero)
-    customContent.appendChild(proyectosSection);
-    customContent.appendChild(adminSection);
-    
-    // Buscar el título "Inicio" y reemplazarlo
-    const welcomeTitle = content.querySelector('h1, h2');
-    const welcomeText = content.querySelector('p');
-    
-    if (welcomeTitle) {
-      if (welcomeTitle.parentNode === content) {
-        content.insertBefore(customContent, welcomeTitle);
-      } else {
-        const firstChild = content.firstElementChild || content.firstChild;
-        if (firstChild) {
-          content.insertBefore(customContent, firstChild);
-        } else {
-          content.appendChild(customContent);
-        }
-      }
-      
-      welcomeTitle.style.display = 'none';
-      if (welcomeText) {
-        welcomeText.style.display = 'none';
-      }
+    // Insertar la tarjeta al inicio del contenido
+    const firstChild = content.firstElementChild || content.firstChild;
+    if (firstChild) {
+      content.insertBefore(welcomeCard, firstChild);
     } else {
-      const firstChild = content.firstElementChild || content.firstChild;
-      if (firstChild) {
-        content.insertBefore(customContent, firstChild);
-      } else {
-        content.appendChild(customContent);
-      }
+      content.appendChild(welcomeCard);
     }
     
-    console.log('Ezertech: ✅✅✅ Vista de usuario logueado inyectada exitosamente');
+    console.log('Ezertech: ✅✅✅ Tarjeta de bienvenida inyectada exitosamente');
     return true;
   }
   
