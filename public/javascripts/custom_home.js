@@ -168,7 +168,7 @@
       <div class="ezertech-welcome-icon">
         <i class="fas fa-hand-sparkles"></i>
       </div>
-      <h1 class="ezertech-welcome-title">¡Bienvenido a Ezertech!</h1>
+      <h1 class="ezertech-welcome-title">¡zertech!</h1>
       <p class="ezertech-welcome-subtitle">Sistema de Gestión de Proyectos y Peticiones</p>
       <div class="ezertech-welcome-content">
         <p>Estamos encantados de tenerte aquí. Desde este panel podrás gestionar todos tus proyectos, peticiones y actividades de manera eficiente y organizada.</p>
@@ -266,7 +266,7 @@
     const hero = document.createElement('div');
     hero.className = 'ezertech-hero';
     hero.innerHTML = `
-      <h1>Bienvenido a Ezertech</h1>
+      <h1>Centro de Soporte Ezertech</h1>
       <p>Estamos aquí para ayudarte. Gestiona tus solicitudes, consulta el estado de tus tickets y encuentra respuestas rápidas a todas tus necesidades.</p>
     `;
     
